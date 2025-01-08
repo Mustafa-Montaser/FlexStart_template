@@ -1,3 +1,105 @@
+@keyframes img-animation {
+  0% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
 
+* {
+  font-family: "Nunito", serif;
+}
+
+.mainCont {
+  background-image: url("../imgs/hero-bg.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+@media (min-width: 992px) {
+  .mainCont {
+    height: 100vh;
+  }
+}
+.mainCont nav {
+  background-color: white;
+  box-shadow: 0 0 5px #000;
+}
+.mainCont nav #navbarSupportedContent .logo {
+  color: #002c6a;
+}
+.mainCont nav #navbarSupportedContent .navbar-nav .nav-link {
+  color: #002c6a;
+}
+.mainCont nav #navbarSupportedContent .navbar-nav .nav-link:hover {
+  color: #4153f1;
+}
+.mainCont nav #navbarSupportedContent .navbar-nav .active {
+  color: #4153f1;
+}
+.mainCont nav .nav-btn {
+  background-color: #4153f1;
+  transition: all 200ms linear;
+}
+.mainCont nav .nav-btn:hover {
+  background-color: #727ccc;
+}
+.mainCont nav .navbar-toggler:focus {
+  box-shadow: 0 0 5px 1px #4153f1 !important;
+}
+.mainCont main {
+  margin-top: 120px;
+}
+.mainCont main .container .content .row > div:nth-of-type(1) div {
+  animation: img-animation 3s linear infinite;
+}
+.mainCont main .container .content .row > div:nth-of-type(2) > div p:nth-of-type(1) {
+  color: #002c6a;
+  font-size: 25px;
+}
+@media (min-width: 1200px) {
+  .mainCont main .container .content .row > div:nth-of-type(2) > div p:nth-of-type(1) {
+    font-size: 48px;
+  }
+}
+.mainCont main .container .content .row > div:nth-of-type(2) > div p:nth-of-type(2) {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 18px;
+}
+.mainCont main .container .content .row > div:nth-of-type(2) > div div > a {
+  background-color: #4153f1;
+  transition: all 200ms linear;
+}
+.mainCont main .container .content .row > div:nth-of-type(2) > div div > a i {
+  left: 0;
+  transition: all 200ms linear;
+}
+.mainCont main .container .content .row > div:nth-of-type(2) > div div > a:hover {
+  background-color: #727ccc;
+}
+.mainCont main .container .content .row > div:nth-of-type(2) > div div > a:hover i {
+  transform: translateX(10px);
+}
+.mainCont main .container .content .row > div:nth-of-type(2) > div div > button i {
+  color: #4153f1;
+  transition: all 200ms linear;
+}
+.mainCont main .container .content .row > div:nth-of-type(2) > div div > button span {
+  color: #002c6a;
+  transition: all 200ms linear;
+}
+.mainCont main .container .content .row > div:nth-of-type(2) > div div > button:hover i {
+  color: #4153f1;
+}
+.mainCont main .container .content .row > div:nth-of-type(2) > div div > button:hover span {
+  color: #4153f1;
+}
 
 /*# sourceMappingURL=style.css.map */

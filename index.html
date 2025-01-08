@@ -1,12 +1,106 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Title</title>
+        <!--=========================================================================================-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Heebo:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Racing+Sans+One&display=swap" rel="stylesheet">
+        <!--=========================================================================================-->
+        <link rel="stylesheet" href="./assets/css/all.min.css">
+        <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <!--=========================================================================================-->
+        <title>Flex Start</title>
     </head>
     
     <body>
-    
+        <!-- =================================================================================== -->
+        <div class="mainCont d-flex align-items-center justify-content-around">
+            <div class="navbarCont position-fixed start-0 end-0 top-0 z-3">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg">
+                        <div class="container-fluid">
+                            <a class="navbar-brand d-flex align-items-center" href="#">
+                                <div><img src="./assets/imgs/logo.png" alt=""></div>
+                                <div><span class="logo fs-2 fw-bold ms-2">FlexStart</span></div>
+                            </a>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav mb-2 me-5 mb-lg-0 ms-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link active text-capitalize fw-bold" aria-current="page" href="#home">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-capitalize fw-bold" href="#about">about</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-capitalize fw-bold" href="#services">services</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-capitalize fw-bold" href="#portfolio">portfolio</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-capitalize fw-bold" href="#team">team</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-capitalize fw-bold" href="#blog">blog</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-capitalize fw-bold" href="#contact">contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <button class="nav-btn text-capitalize text-white px-3 py-2 border-0 rounded fw-bold me-4" type="button">get started</button>
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <main id="home" class="py-3">
+                <div class="container">
+                    <div class="content">
+                        <div class="row flex-lg-row-reverse">
+                            <div class="col-12 col-lg-6">
+                                <div class="d-flex justify-content-center position-relative top-0 w-100">
+                                    <img src="./assets/imgs/hero-img.png" alt="" class="w-100">
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 d-flex align-items-center">
+                                <div>
+                                    <p class="fw-bold">We offer modern solutions for growing your business</p>
+                                    <p class="fw-semibold">We are team of talented designers making websites with Bootstrap</p>
+                                    <div class="row g-3">
+                                        <div class="col-12 col-md-6">
+                                            <a href="#about" class="text-decoration-none text-white px-5 py-3 rounded d-block text-center text-md-start">
+                                                <span class="text-capitalize">get started</span>
+                                                <i class="fa-solid fa-arrow-right d-inline-block position-relative ms-2"></i>
+                                            </a>
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                            <div class="d-flex align-items-center h-100">
+                                                <button class="bg-transparent border-0 d-flex justify-content-center justify-content-md-start align-items-center w-100 text-center text-md-start">
+                                                    <i class="fa-regular fa-circle-play fs-1 d-inline-block"></i>
+                                                    <span class="text-capitalize fw-bold fs-5 ms-2">watch video</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <!-- =================================================================================== -->
+        <!-- =================================================================================== -->
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/script.js"></script>
+        <!-- =================================================================================== -->
     </body>
 </html>
