@@ -1,20 +1,25 @@
 $mainColor: #002c6a;
 $secColor: #4153f1;
-$secColorHover: #727ccc;
+$secColorHover: #5863cc;
+$thirdColor: #ebeefc;
 
-@mixin trans {
+@mixin linearTransition {
     transition: all 200ms linear;
+}
+
+@mixin linearTransition2 {
+    transition: all 500ms linear;
 }
 
 @keyframes img-animation {
     0% {
-        transform: translateY(-20px);
+        transform: translateY(-10px);
     }
     50% {
-        transform: translateY(20px);
+        transform: translateY(10px);
     }
     100% {
-        transform: translateY(-20px);
+        transform: translateY(-10px);
     }
 }
 
@@ -26,123 +31,208 @@ html {
     font-family: "Nunito", serif;
 }
 
-.mainCont {
-    background-image: url("../imgs/hero-bg.png");
+.scroll-btn {
+    width: 40px;
+    height: 40px;
+    
+}
+
+.txt-main-clr {
+    color: $mainColor !important;
+}
+
+.txt-sec-clr {
+    color: $secColor !important;
+}
+
+.sec-txt-clr {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.nav-item-active {
+    color: $secColor !important;
+}
+
+.bg-sec-clr {
+    background-color: $secColor;
+}
+
+.nav-btn {
+    @include linearTransition();
+    
+    &:hover {
+        background-color: $secColorHover;
+    }
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 5px $secColor;
+}
+
+.nav-cont {
+    @include linearTransition();
+    background-color: #fff;
+    box-shadow: 0 0 5px #333;
+    
+    @media (min-width: 992px) {
+        background-color: transparent;
+        box-shadow: none;
+    }
+}
+
+
+main {
+    background-image: url(../imgs/hero-bg.png);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     
     @media (min-width: 992px) {
         height: 100vh;
+        display: flex;
+        align-items: center;
     }
     
-    nav {
-        background-color: white;
-        box-shadow: 0 0 5px #000;
-        
-        #navbarSupportedContent {
-            .logo {
-                color: $mainColor;
-            }
+    .img-cont {
+        img {
+            //margin-bottom: -40px;
+            animation: img-animation 2500ms linear infinite;
             
-            .navbar-nav {
-                .nav-link {
-                    color: $mainColor;
+            @media (min-width: 576px) and (max-width: 992px) {
+                width: 75% !important;
+            }
+        }
+    }
+    
+    
+    .carousel-item {
+        @include linearTransition2();
+    }
+    
+    .modal-content {
+        > button {
+            top: 20px;
+            right: 20px;
+        }
+        
+        .modal-main-content {
+            background-color: #141414 !important;
+        }
+    }
+    
+    .main-header {
+        @media (min-width: 992px) {
+            font-size: 48px !important;
+        }
+    }
+}
+
+.main-btn {
+    @include linearTransition();
+    
+    i {
+        @include linearTransition();
+    }
+    
+    &:hover {
+        background-color: $secColorHover;
+        
+        i {
+            left: 10px !important;
+        }
+    }
+}
+
+.sec1 {
+    .content {
+        background-color: #f6f6fe;
+    }
+}
+
+.head-content {
+    h4 {
+        background-color: $thirdColor;
+        border-radius: 25px;
+    }
+}
+
+.sec2 {
+    .col-content {
+        .img-cont {
+            @include linearTransition2();
+            
+            &:hover {
+                transform: scale(0.9);
+            }
+        }
+    }
+}
+
+.fs-icon {
+    font-size: 42px;
+}
+
+.sec4 {
+    .sub-item {
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+        
+        i {
+            @include linearTransition();
+        }
+        
+        &:hover {
+            i {
+                background-color: $secColor !important;
+                color: $thirdColor !important;
+            }
+        }
+    }
+    
+    i {
+        background-color: $thirdColor;
+    }
+}
+
+.sec6 {
+    $colors: (
+                    (1, #22c2e3, #e6f9fd),
+                    (2, #e78534, #fff3e7),
+                    (3, #35c093, #e8f9f3),
+                    (4, #be2431, #fce7e4),
+                    (5, #5f1bc9, #efe7fe),
+                    (6, #db398a, #fee9f2),
+    );
+    
+    @each $index, $color, $colorBg in $colors {
+        .row > div:nth-of-type(#{$index}) {
+            .content {
+                border-bottom: 5px solid $color;
+                @include linearTransition();
+                
+                &:hover {
+                    background: $color;
+                    color: $colorBg !important;
                     
-                    &:hover {
-                        color: $secColor;
+                    a > div:nth-of-type(2) h5,
+                    a > div:nth-of-type(2) p {
+                        color: $colorBg !important;
                     }
                 }
                 
-                .active {
-                    color: $secColor;
-                }
-            }
-        }
-        
-        .nav-btn {
-            background-color: $secColor;
-            @include trans();
-            
-            &:hover {
-                background-color: $secColorHover;
-            }
-        }
-        
-        .navbar-toggler:focus {
-            box-shadow: 0 0 5px 1px $secColor !important;
-        }
-    }
-    
-    main {
-        margin-top: 120px;
-        .container {
-            .content {
-                .row {
+                a {
                     > div:nth-of-type(1) {
-                        div {
-                            animation: img-animation 3s linear infinite;
+                        background: $colorBg;
+                        width: 80px;
+                        height: 80px;
+                        
+                        i {
+                            color: $color;
                         }
                     }
                     
                     > div:nth-of-type(2) {
-                        > div {
-                            p:nth-of-type(1) {
-                                color: $mainColor;
-                                font-size: 25px;
-                                
-                                @media (min-width: 1200px) {
-                                    font-size: 48px;
-                                }
-                            }
-                            
-                            p:nth-of-type(2) {
-                                color: rgba(0, 0, 0, 0.5);
-                                font-size: 18px;
-                                
-                                @media (min-width: 1200px) {
-                                    //font-size: 30px;
-                                }
-                            }
-                            
-                            div {
-                                > a {
-                                    background-color: $secColor;
-                                    @include trans();
-                                    
-                                    i {
-                                        left: 0;
-                                        @include trans();
-                                    }
-                                    
-                                    &:hover {
-                                        background-color: $secColorHover;
-                                        
-                                        i {
-                                            transform: translateX(10px);
-                                        }
-                                    }
-                                }
-                                
-                                > button {
-                                    i {
-                                        color: $secColor;
-                                        @include trans();
-                                    }
-                                    span {
-                                        color: $mainColor;
-                                        @include trans();
-                                    }
-                                    &:hover {
-                                        i {
-                                            color: $secColor;
-                                        }
-                                        span {
-                                            color: $secColor;
-                                        }
-                                    }
-                                }
-                            }
+                        p:nth-of-type(2) {
+                            color: $color;
                         }
                     }
                 }
@@ -152,4 +242,68 @@ html {
 }
 
 
+.sec7 {
+    .row {
+        $colors: (
+                        (1, #2ebf93),
+                        (2, #0dc8f6),
+                        (3, #ef842c),
+                        (4, #0d6bfd),
+        );
+        
+        @each $index, $color in $colors {
+            .col-md-6.col-lg-3:nth-of-type(#{$index}) .content {
+                h5, i {
+                    color: $color;
+                }
+            }
+        }
+        
+        .content {
+            i {
+                font-size: 55px;
+            }
+            
+            @include linearTransition();
+            
+            &:hover {
+                transform: scale(1.05);
+            }
+            
+            .price-cont {
+                width: fit-content;
+                
+                .price {
+                    font-size: 40px;
+                }
+                
+                .dollar {
+                    top: -10px;
+                    left: -15px;
+                }
+            }
+            
+            > a {
+                width: fit-content;
+                border: 2px solid $secColor;
+                border-radius: 30px;
+                @include linearTransition();
+                
+                &:hover {
+                    color: #fff !important;
+                    background: $secColor;
+                }
+                
+            }
+        }
+    }
+}
 
+.sec8 {
+    .accordion-button {
+        background: transparent !important;
+        &:focus {
+            box-shadow: none !important;
+        }
+    }
+}
