@@ -15,10 +15,16 @@
         <title>Flex Start</title>
     </head>
     
-    <body>
+    <body class="overflow-x-hidden">
         <!-- =================================================================================== -->
+        <!-- Loader Section -->
+        <div class="loader-cont">
+            <span class="loader"></span>
+        </div>
+        <!--==================-->
+        
         <!-- Start Scroll-Btn Section -->
-        <a href="#end" class="scroll-btn position-fixed end-0 bottom-0 border-0 rounded text-white bg-sec-clr d-flex justify-content-center align-items-center text-decoration-none me-3 mb-3 z-3 shadow">
+        <a href="#home" class="scroll-btn position-fixed end-0 bottom-0 border-0 rounded text-white bg-sec-clr d-flex justify-content-center align-items-center text-decoration-none me-3 mb-3 z-3 shadow">
             <i class="fa-solid fa-arrow-up"></i>
         </a>
         <!-- End Scroll-Btn Section -->
@@ -84,13 +90,13 @@
         <main id="home">
             <div class="container py-5">
                 <div class="main-cont row">
-                    <div class="col-lg-6 order-lg-2">
-                        <div class="img-cont d-flex justify-content-center p-3">
-                            <img src="./assets/imgs/hero-img.png" alt="" class="w-100">
+                    <div class="col-lg-6 order-lg-2 img-cont-cont">
+                        <div class="img-cont d-flex justify-content-center p-3 overflow-x-hidden">
+                            <img src="./assets/imgs/hero-img.png" alt="" class="main-img w-100">
                         </div>
                     </div>
-                    <div class="col-lg-6 order-lg-1 d-flex align-items-center">
-                        <div>
+                    <div class="col-lg-6 order-lg-1 d-flex align-items-center main-content-cont">
+                        <div class="main-content">
                             <h2 class="main-header fs-1 txt-main-clr fw-bold">We offer modern solutions for growing your business</h2>
                             <p class="sec-txt-clr fs-5 fw-medium">We are team of talented designers making websites with Bootstrap</p>
                             <div class="row">
@@ -194,10 +200,10 @@
         <!-- End main Section -->
         
         <!-- Start Section 1  -->
-        <section id="about" class="sec1 container my-5">
+        <section id="about" class="sec1 container py-5">
             <div class="row g-0">
-                <div class="col-lg-6 d-xl-flex align-items-xl-center">
-                    <div class="content py-4 px-3 px-md-5">
+                <div class="col-lg-6 d-xl-flex align-items-xl-center content-cont">
+                    <div class="content py-4 px-3 px-md-5 anime-scroll">
                         <h4 class="text-uppercase txt-sec-clr fs-6 fw-bold">Who We Are</h4>
                         <p class="txt-main-clr fw-bold fs-4">
                             Expedita voluptas omnis cupiditate totam eveniet nobis sint iste. Dolores est repellat corrupti reprehenderit.
@@ -215,8 +221,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 d-lg-flex align-items-lg-center">
-                    <div class="img-cont">
+                <div class="col-lg-6 d-lg-flex align-items-lg-center img-cont-cont">
+                    <div class="img-cont anime-scroll">
                         <img src="./assets/imgs/about.jpg" alt="" class="w-100">
                     </div>
                 </div>
@@ -225,7 +231,7 @@
         <!-- End Section 1  -->
         
         <!-- Start Section 2  -->
-        <section class="sec2 container my-5">
+        <section class="sec2 container py-5">
             <div class="head-content text-center my-5">
                 <h4 class="text-uppercase px-4 py-2 txt-sec-clr fw-bold fs-6 d-inline-block">our values</h4>
                 <h2 class="fw-bold txt-main-clr fs-1">What we value most</h2>
@@ -271,7 +277,7 @@
         <!-- End Section 2  -->
         
         <!-- Start Section 3  -->
-        <section class="sec3 container my-5">
+        <section class="sec3 container py-5">
             <div class="row">
                 <div class="col-md-6 col-lg-3">
                     <div class="d-flex align-items-center justify-content-start py-5 px-4 rounded rounded-lg shadow h-100">
@@ -279,7 +285,7 @@
                             <i class="fa-regular fa-face-grin-wink fs-icon txt-sec-clr fw-bold"></i>
                         </div>
                         <div>
-                            <p class="p-0 m-0 fw-bold fs-1 txt-main-clr">232</p>
+                            <p class="p-0 m-0 fw-bold fs-1 txt-main-clr" id="cli">232</p>
                             <p class="p-0 m-0 ">Happy Clients</p>
                         </div>
                     </div>
@@ -290,7 +296,7 @@
                             <i class="fa-solid fa-users fs-icon fw-bold" style="color: #e37a44"></i>
                         </div>
                         <div>
-                            <p class="p-0 m-0 fw-bold fs-1 txt-main-clr">570</p>
+                            <p class="p-0 m-0 fw-bold fs-1 txt-main-clr" id="pro">570</p>
                             <p class="p-0 m-0 ">Projects</p>
                         </div>
                     </div>
@@ -301,7 +307,7 @@
                             <i class="fa-solid fa-users fs-icon fw-bold" style="color: #13c157"></i>
                         </div>
                         <div>
-                            <p class="p-0 m-0 fw-bold fs-1 txt-main-clr">1460</p>
+                            <p class="p-0 m-0 fw-bold fs-1 txt-main-clr" id="hours">1460</p>
                             <p class="p-0 m-0 ">Hours of Support</p>
                         </div>
                     </div>
@@ -312,7 +318,7 @@
                             <i class="fa-solid fa-users fs-icon fw-bold" style="color: #a81952"></i>
                         </div>
                         <div>
-                            <p class="p-0 m-0 fw-bold fs-1 txt-main-clr">23</p>
+                            <p class="p-0 m-0 fw-bold fs-1 txt-main-clr" id="work">23</p>
                             <p class="p-0 m-0 ">Hard Workers</p>
                         </div>
                     </div>
@@ -322,7 +328,7 @@
         <!-- End Section 3  -->
         
         <!-- Start Section 4  -->
-        <section class="sec4 container my-5">
+        <section class="sec4 container py-5">
             <div class="head-content text-center mb-3">
                 <h4 class="text-uppercase px-4 py-2 txt-sec-clr fw-bold fs-6 d-inline-block">Features</h4>
                 <h2 class="fw-bold txt-main-clr fs-1">Our Advanced Features</h2>
@@ -380,7 +386,7 @@
         <!-- End Section 4  -->
         
         <!-- Start Section 5  -->
-        <section class="sec5 container my-5">
+        <section class="sec5 container py-5">
             <div class="row gy-5 flex-xl-row-reverse">
                 <div class="col-xl-6">
                     <div class="w-100 d-flex justify-content-center">
@@ -450,7 +456,7 @@
         <!-- End Section 5  -->
         
         <!-- Start Section 6  -->
-        <section class="sec6 container my-5">
+        <section class="sec6 container py-5" id="services">
             <div class="head-content text-center mb-3">
                 <h4 class="text-uppercase px-4 py-2 txt-sec-clr fw-bold fs-6 d-inline-block">Services</h4>
                 <h2 class="fw-bold txt-main-clr fs-1">Check Our Services</h2>
@@ -579,7 +585,7 @@
         <!-- End Section 6  -->
         
         <!-- Start Section 7  -->
-        <section class="sec7 container my-5">
+        <section class="sec7 container py-5">
             <div class="head-content text-center mb-3">
                 <h4 class="text-uppercase px-4 py-2 txt-sec-clr fw-bold fs-6 d-inline-block">Pricing</h4>
                 <h2 class="fw-bold txt-main-clr fs-1">Check Our Affordable Pricing</h2>
@@ -676,7 +682,7 @@
         <!-- End Section 7  -->
         
         <!-- Start Section 8  -->
-        <section class="sec8 container my-5"  id="end">
+        <section class="sec8 container py-5">
             <div class="row">
                 <div class="col-12">
                     <div class="head-content text-center mb-3">
@@ -773,12 +779,49 @@
         </section>
         <!-- End Section 8  -->
         
+        <!-- Start Section 9  -->
+        <section class="sec9 container py-5"  id="portfolio"> <!-- portfolio -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="head-content text-center mb-3">
+                        <h4 class="text-uppercase px-4 py-2 txt-sec-clr fw-bold fs-6 d-inline-block">portfolio</h4>
+                        <h2 class="fw-bold txt-main-clr fs-1">Check our latest work</h2>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="content">
+                        <ul class="list-unstyled m-0 p-0 d-flex justify-content-center">
+                            <li>
+                                <a tabindex="0" class="fw-bold text-decoration-none txt-main-clr mx-1 px-1 py-1">All</a>
+                            </li>
+                            <li>
+                                <a tabindex="0" class="fw-bold text-decoration-none txt-main-clr mx-1 px-1 py-1">App</a>
+                            </li>
+                            <li>
+                                <a tabindex="0" class="fw-bold text-decoration-none txt-main-clr mx-1 px-1 py-1">Product</a>
+                            </li>
+                            <li>
+                                <a tabindex="0" class="fw-bold text-decoration-none txt-main-clr mx-1 px-1 py-1">Branding</a>
+                            </li>
+                            <li>
+                                <a tabindex="0" class="fw-bold text-decoration-none txt-main-clr mx-1 px-1 py-1">Books</a>
+                            </li>
+                        </ul>
+                        <div class="container mt-4">
+                            <div class="cate-cont row g-4">
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Section 9  -->
         
         
         
         <!-- =================================================================================== -->
         <!-- =================================================================================== -->
-        <script src="./assets/js/jquery-3.7.1.min.js"></script>
         <script src="assets/js/bootstrap.bundle.min.js"></script>
         <script src="assets/js/script.js"></script>
         <!-- =================================================================================== -->

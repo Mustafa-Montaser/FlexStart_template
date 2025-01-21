@@ -65,6 +65,37 @@ html {
   }
 }
 
+.loader-cont {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2b2f32;
+  z-index: 100;
+}
+.loader-cont .loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #FFF;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 600ms linear infinite;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 main {
   background-image: url(../imgs/hero-bg.png);
   background-size: cover;
@@ -78,13 +109,32 @@ main {
     align-items: center;
   }
 }
-main .img-cont img {
+main .img-cont-cont .img-cont {
+  transform: scale(1.5);
+  opacity: 0;
+  transition: all 500ms linear;
+}
+main .img-cont-cont .img-cont img {
   animation: img-animation 2500ms linear infinite;
 }
 @media (min-width: 576px) and (max-width: 992px) {
-  main .img-cont img {
+  main .img-cont-cont .img-cont img {
     width: 75% !important;
   }
+}
+main .img-cont-cont .active {
+  transform: scale(1);
+  opacity: 1;
+}
+main .main-content-cont .main-content {
+  transition: all 500ms linear;
+  position: relative;
+  top: 50px;
+  opacity: 0;
+}
+main .main-content-cont .active {
+  opacity: 1;
+  top: 0;
 }
 main .carousel-item {
   transition: all 500ms linear;
@@ -115,8 +165,25 @@ main .modal-content .modal-main-content {
   left: 10px !important;
 }
 
-.sec1 .content {
+.sec1 .content-cont .content {
   background-color: #f6f6fe;
+  position: relative;
+  left: -100px;
+  opacity: 0;
+  transition: all 500ms linear;
+}
+.sec1 .content-cont .active {
+  left: 0;
+  opacity: 1;
+}
+.sec1 .img-cont-cont .img-cont {
+  transform: scale(0.75);
+  opacity: 0;
+  transition: all 500ms linear;
+}
+.sec1 .img-cont-cont .active {
+  transform: scale(1);
+  opacity: 1;
 }
 
 .head-content h4 {
@@ -335,6 +402,52 @@ main .modal-content .modal-main-content {
 }
 .sec8 .accordion-button:focus {
   box-shadow: none !important;
+}
+
+.sec9 .content ul li a {
+  transition: all 200ms linear;
+  cursor: pointer;
+}
+.sec9 .content ul li a:hover, .sec9 .content ul li a:focus, .sec9 .content ul li a:focus-visible {
+  color: #4153f1 !important;
+  border-bottom: 2px solid #4153f1 !important;
+  outline: none;
+}
+@keyframes img-hide {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  99.9% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+    display: none;
+  }
+}
+@keyframes img-show {
+  0% {
+    display: block;
+    transform: scale(0);
+    opacity: 0;
+  }
+  0.1% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.sec9 .content .container .cate-cont .img-cont-active {
+  animation: img-show 300ms ease-in-out forwards;
+}
+.sec9 .content .container .cate-cont .img-cont-inactive {
+  animation: img-hide 300ms ease-in-out forwards;
 }
 
 /*# sourceMappingURL=style.css.map */

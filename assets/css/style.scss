@@ -80,6 +80,39 @@ html {
     }
 }
 
+.loader-cont {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2b2f32;
+    z-index: 100;
+    
+    .loader {
+        width: 48px;
+        height: 48px;
+        border: 5px solid #FFF;
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+        animation: rotation 600ms linear infinite;
+    }
+    
+    @keyframes rotation {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
+
 
 main {
     background-image: url(../imgs/hero-bg.png);
@@ -93,14 +126,39 @@ main {
         align-items: center;
     }
     
-    .img-cont {
-        img {
-            //margin-bottom: -40px;
-            animation: img-animation 2500ms linear infinite;
-            
-            @media (min-width: 576px) and (max-width: 992px) {
-                width: 75% !important;
+    .img-cont-cont {
+        .img-cont {
+            img {
+                //margin-bottom: -40px;
+                animation: img-animation 2500ms linear infinite;
+                
+                @media (min-width: 576px) and (max-width: 992px) {
+                    width: 75% !important;
+                }
             }
+            
+            transform: scale(1.5);
+            opacity: 0;
+            @include linearTransition2();
+        }
+        
+        .active {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    
+    .main-content-cont {
+        .main-content {
+            @include linearTransition2();
+            position: relative;
+            top: 50px;
+            opacity: 0;
+        }
+        
+        .active {
+            opacity: 1;
+            top: 0;
         }
     }
     
@@ -144,9 +202,34 @@ main {
 }
 
 .sec1 {
-    .content {
-        background-color: #f6f6fe;
+    .content-cont {
+        .content {
+            background-color: #f6f6fe;
+            position: relative;
+            left: -100px;
+            opacity: 0;
+            @include linearTransition2();
+        }
+        
+        .active {
+            left: 0;
+            opacity: 1;
+        }
     }
+    
+    .img-cont-cont {
+        .img-cont {
+            transform: scale(0.75);
+            opacity: 0;
+            @include linearTransition2();
+        }
+        
+        .active {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    
 }
 
 .head-content {
@@ -302,8 +385,79 @@ main {
 .sec8 {
     .accordion-button {
         background: transparent !important;
+        
         &:focus {
             box-shadow: none !important;
         }
     }
 }
+
+
+.sec9 {
+    .content {
+        ul {
+            //li:nth-of-type(1) a {
+            //    color: $secColor !important;
+            //    border-bottom: 2px solid $secColor !important;
+            //}
+            //
+            li {
+                a {
+                    @include linearTransition();
+                    cursor: pointer;
+                    
+                    &:hover, &:focus, &:focus-visible {
+                        color: $secColor !important;
+                        border-bottom: 2px solid $secColor !important;
+                        outline: none;
+                    }
+                }
+            }
+        }
+        
+        .container {
+            .cate-cont {
+                @keyframes img-hide {
+                    0% {
+                        transform: scale(1);
+                        opacity: 1;
+                    }
+                    99.9% {
+                        transform: scale(0);
+                        opacity: 0;
+                    }
+                    100% {
+                        transform: scale(0);
+                        opacity: 0;
+                        display: none;
+                    }
+                }
+                
+                @keyframes img-show {
+                    0% {
+                        display: block;
+                        transform: scale(0);
+                        opacity: 0;
+                    }
+                    0.1% {
+                        transform: scale(0);
+                        opacity: 0;
+                    }
+                    100% {
+                        transform: scale(1);
+                        opacity: 1;
+                    }
+                }
+                
+                .img-cont-active {
+                    animation: img-show 300ms ease-in-out forwards;
+                }
+                
+                .img-cont-inactive {
+                    animation: img-hide 300ms ease-in-out forwards;
+                }
+            }
+        }
+    }
+}
+
